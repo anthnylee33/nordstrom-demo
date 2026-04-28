@@ -1,4 +1,7 @@
 strictPeerDependencies: true
+peerDependencyRules:
+  allowedVersions:
+    ember-this-fallback>ember-source: "*"
 packages:
 - "docs/developer-guides"
 - "frontend/custom-proxy"
