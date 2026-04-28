@@ -1,0 +1,16 @@
+/admin/backups
+/categories
+/client_settings
+/global/asset-version
+/logs_error_rate_exceeded
+/merge_user
+/patreon/background_sync
+/recalculate_scores
+/refresh-sidebar-sections
+/refresh_client
+/reviewable_action
+/reviewable_claimed
+/site/banner
+/site/read-only
+/staff/topic-assignment
+/u/${user.username_lower}
