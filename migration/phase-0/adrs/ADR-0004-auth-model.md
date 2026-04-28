@@ -111,7 +111,12 @@ Server Components read `headers().get("x-discourse-user")` to know who's logged 
 // Server Action
 "use server";
 export async function logout() {
-  const username = headers().get("x-discourse-user-username");
+  const userHeader = headers().get("x-discourse-user");
+  const username = userHeader ? JSON.parse(userHeader)?.username : null;
+  if (!username) {
+    cookies().delete("_t");
+    redirect("/");
+  }
   await fetch(`${process.env.DISCOURSE_API_BASE_URL}/session/${username}`, {
     method: "DELETE",
     headers: { Cookie: cookies().toString(), "X-CSRF-Token": await getCsrfToken() },
